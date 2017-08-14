@@ -34,7 +34,9 @@ public class BallHealth : MonoBehaviour {
         gameoverTimer.Interval = GetComponent<AudioSource>().clip.length * 1000;
 
         yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-        SceneManager.LoadScene(0);
+        transform.position = CheckPoint.reachedPoint;
+        //SceneManager.LoadScene(0);
+        isRestarting = false;
 
     }
 }
