@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPoint : MonoBehaviour {
-    public static Vector3 reachedPoint;
+    public static Vector3 reachedPoint = new Vector3(2,0,0);
 
     public void OnTriggerEnter(Collider col)
 

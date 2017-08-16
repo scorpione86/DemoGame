@@ -7,7 +7,7 @@ public class BallController : MonoBehaviour {
     public float rotationSpeed = 100;
     public Rigidbody rb;
 
-    public float jumpHeight = 8;
+    public float jumpHeight = 5;
     public float distToGround;
 
     public AudioClip Hit01;
