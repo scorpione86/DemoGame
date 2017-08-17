@@ -15,7 +15,7 @@ public class BallHealth : MonoBehaviour {
         {
             if (GameMaster.isRestarting == false)
             {
-                gameMaster.RestartLevel();
+                StartCoroutine(gameMaster.RestartLevel());
             }
         }
 	}

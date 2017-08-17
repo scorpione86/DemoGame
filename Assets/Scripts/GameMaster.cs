@@ -28,7 +28,7 @@ public class GameMaster : MonoBehaviour {
         GUI.Box(new Rect(Screen.width /2 - sizeX/2 , offsetY, sizeX, sizeY), "Score: " + currentScore);
 	}
 
-    public void RestartLevel()
+    public IEnumerator RestartLevel()
     {
         isRestarting = true;
         GetComponent<AudioSource>().clip = gameOverSound;
@@ -38,16 +38,16 @@ public class GameMaster : MonoBehaviour {
         Timer gameoverTimer = new Timer();
         gameoverTimer.Interval = GetComponent<AudioSource>().clip.length * 1000;
 
-        //yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-        StartCoroutine(playAudio());
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        //StartCoroutine(playAudio());
         player.position = CheckPoint.reachedPoint;
         //SceneManager.LoadScene(0);
         isRestarting = false;
 
     }
 
-    public IEnumerator playAudio()
-    {
-        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-    }
+    //public IEnumerator playAudio()
+    //{
+    //    yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+    //}
 }

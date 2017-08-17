@@ -9,6 +9,10 @@ public class KillOnHit : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("restarting");
-        gameMaster.RestartLevel();
+        if (GameMaster.isRestarting == false)
+        {
+            StartCoroutine(gameMaster.RestartLevel());
+        }
+        
     }
 }

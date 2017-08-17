@@ -371,7 +371,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1039661103414976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.06, y: 0.58, z: 0}
+  m_LocalPosition: {x: 24.36, y: 2.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4195091443968084}
@@ -651,7 +651,7 @@ MonoBehaviour:
   deathParticles: {fileID: 4722612597802548, guid: 762010dd07c467043822dc2a7f586567,
     type: 2}
   enemyAnim: {fileID: 95848588802952904}
-  colliders: {fileID: 0}
+  colliders: {fileID: 4477705718994500}
 --- !u!137 &137345982471516930
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
