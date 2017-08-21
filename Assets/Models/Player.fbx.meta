@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b0da428809d20e648b7570d75858f96a
-timeCreated: 1502653757
+timeCreated: 1503060809
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -105,7 +105,7 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
-    keepQuads: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001

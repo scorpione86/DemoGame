@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour {
     public void PlayGame()
     {
         DontDestroyOnLoad(music);
-        EditorSceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void setGameVolume (float vol)

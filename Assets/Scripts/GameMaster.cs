@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour {
     public static int currentScore = 0;
+    public static int finalScore = 0;
     public float offsetY = 2;
     public float sizeX = 100;
     public float sizeY = 23;
@@ -12,6 +14,7 @@ public class GameMaster : MonoBehaviour {
     public AudioClip gameOverSound;
     public Transform player;
     public static bool isRestarting = false;
+
 
     private void Start()
     {
@@ -35,17 +38,23 @@ public class GameMaster : MonoBehaviour {
         GetComponent<AudioSource>().pitch = 1;
         GetComponent<AudioSource>().Play();
 
-        Timer gameoverTimer = new Timer();
-        gameoverTimer.Interval = GetComponent<AudioSource>().clip.length * 1000;
+        //Timer gameoverTimer = new Timer();
+        //gameoverTimer.Interval = GetComponent<AudioSource>().clip.length * 1000;
 
         yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
-        //StartCoroutine(playAudio());
+
         player.position = CheckPoint.reachedPoint;
-        //SceneManager.LoadScene(0);
+        Destructable destructible = player.GetComponent<Destructable>();
+        destructible.DeDestruct();
+
         isRestarting = false;
 
     }
-
+    public void LoadNextLevel()
+    {
+        finalScore += currentScore;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     //public IEnumerator playAudio()
     //{
     //    yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
